@@ -8,13 +8,14 @@ def cast_str_to_path(filepath: str | Path) -> Path:
     return Path(filepath) if isinstance(filepath, str) else filepath
 
 
-def pdf_loader(pdf_filepath: str | Path) -> list[dict[str, int]]:
-    """ Load a PDF file and extract the text from each page.
+def pdf_loader(pdf_filepath: str | Path) -> list[dict]:
+    """Load a PDF file and extract the text from each page.
+
     Args:
         pdf_filepath: The path to the PDF file.
 
     Returns:
-        list[dict[str, int]]: A list of dictionaries containing the text, document, and page number.
+        list[dict]: A list of dictionaries containing the text, document, and page number.
     """
     # Cast the input to a Path object
     pdf_filepath = cast_str_to_path(pdf_filepath)
